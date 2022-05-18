@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  @ViewChild('f', {static: false}) f: NgForm;
   constructor(
     private router: Router,
   ) { }
@@ -15,9 +17,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLoggedin(){
+  onLoggedin(model){
     console.log("onlogged in called");
-    this.router.navigate(['forgot-password']);
+    this.router.navigate(['layout']);
+    // this.router.navigate(['forgot-password']);
+    // this.router.navigate(['/sign-up']);
+  }
+
+  gotoResetPwdPage(){
+    this.router.navigate(['layout']);
+  }
+
+  gotoSignUpPage(){
+    this.router.navigate(['sign-up']);
   }
 
 }

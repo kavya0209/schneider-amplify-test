@@ -9,7 +9,7 @@
 			<div class="row right-container">
 				<div class="login-container">
 							<h6> LOGIN TO CONTINUE </h6>
-					<form novalidate role="form" (ngSubmit)="onLoggedin()">
+					<form novalidate  #f="ngForm" (ngSubmit)="onLoggedin(f.value)">
 						<div class="form-content">
 							<div class="form-group">
 								<input type="text" name="username"
@@ -41,15 +41,22 @@
 								</div> -->
 							</div>
 						</div>
-						<button (click)="onLoggedin()" type="submit" class="btn  btn-primary  button-color  login-button" > LOGIN </button>
+						<button type="submit" class="btn  btn-primary  button-color  login-button" > LOGIN </button>
 					</form>
 		
-					<div class="">
-						<a  [routerLink]="['/forgot-password']" [routerLinkActive]="['router-link-active']"
+					<div class="row">
+						<div class="col-md-6">
+							<a href="javascript:void(0)" (click)="gotoResetPwdPage()" class="forgot-password">Forgot Password ?</a>
+						</div>
+						<div class="col-md-6">
+							<a href="javascript:void(0)" (click)="gotoSignUpPage()" class="forgot-password">New User ?</a>
+						</div>
+
+						<!-- <a  [routerLink]="['/forgot-password']" [routerLinkActive]="['router-link-active']"
         class="list-group-item" title="Reports">
 		Forgot Password
             
-        </a>
+        </a> -->
 					<!-- <a href="#/forgot-password"  class="forgot-password forgot-text">Forgot Password ?</a> -->
 						<!-- <a href="javascript:void(0)" (click)="gotoResetPwdPage()" class="forgot-password">Forgot Password ?</a> -->
 					</div>

@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-    // { path: 'login', loadChildren: 'src/app/login/login.module#LoginModule' },
+
+  // { path: '', redirectTo: '/layout', pathMatch: 'full' },
+   
     {
-      path: '',
-      loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
+      path: 'layout',
       // loadChildren: './layout/layout.module#LayoutModule',
-  
-      // canActivate: [AuthGuard],
-      // resolve: {
-      //   cds: CDSDataResolver
-      // }
+      loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
+     
+    },
+    {
+      path : 'sign-up', 
+      loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpModule)
     },
     {
       path : 'login', 
@@ -20,7 +22,7 @@ const routes: Routes = [
     { path: 'forgot-password',
       loadChildren: () => import('./forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule)
     },
-    { path: '**', redirectTo: 'not-found' }
+    // { path: '**', redirectTo: 'not-found' }
 
 ];
 

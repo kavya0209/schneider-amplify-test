@@ -18,5 +18,6 @@ export class AppComponent {
     console.log("app component called");
     // this.router.navigate[('/login')];
     this.router.navigate(['login']);
+    // this.router.navigate(['sign-up']);
   }
 }
