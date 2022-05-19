@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  activeTab:any = "Basic";
+  tabName:any = "Basic";
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  changeBreadcrumb(NewTabName:any){
+		this.tabName = NewTabName;	
+	}
 
 }
