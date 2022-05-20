@@ -1,32 +1,26 @@
-<!-- <app-header></app-header> -->
-
-<div class="component-container">
-    <!-- <nav class="breadcrumbs" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item " aria-current="page">Home</li>
-            <li class="breadcrumb-item " aria-current="page">Profile</li>
-           
-        </ol>
-    </nav> -->
-
-    <div class="row main-content">
-        <div class="col-12 text-center">
-            <ul ngbNav [(activeId)]="activeTab" (navChange)="changeBreadcrumb($event.nextId)" #nav="ngbNav" class="nav nav-tabs">
-                <li [ngbNavItem]="'Basic'">
-                    <a ngbNavLink>DATA</a>
-                    <ng-template ngbNavContent>
-                        <app-add-dataset></app-add-dataset>
-                        <!-- <app-employee-basic-details [view]="profileSection" [action]="action" [empid]="employeeid"></app-employee-basic-details> -->
-                    </ng-template>
-                </li>
-                <li [ngbNavItem]="'Finance'">
-                    <a ngbNavLink>PREDICTION ENGINE</a>
-                    <ng-template ngbNavContent>
-                        <!-- <bank-details></bank-details> -->
-                    </ng-template>
-                </li>
-            </ul>
-            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+<app-header></app-header>
+<div class="sidebar-section-container" clicked>
+    <section class="main-container sidebar-section-view">
+        <div class="row main-content">
+            <div class="col-12 text-center">
+                <ul ngbNav [(activeId)]="activeTab" (navChange)="changeBreadcrumb($event.nextId)" #nav="ngbNav" class="nav nav-tabs">
+                    <li [ngbNavItem]="'Basic'">
+                        <a ngbNavLink>DATA</a>
+                        <ng-template ngbNavContent>
+                            <app-add-dataset></app-add-dataset>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="'Finance'">
+                        <a ngbNavLink>PREDICTION ENGINE</a>
+                        <ng-template ngbNavContent>
+                        </ng-template>
+                    </li>
+                </ul>
+                <div [ngbNavOutlet]="nav" class="mt-2"></div>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
+
+
+

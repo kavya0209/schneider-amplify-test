@@ -1,25 +1,31 @@
-<div class="container">
-    <div class="data-container">
-        <form novalidate>
-            <div class="form-group">
-                <span class="label-css">Dataset Type</span>
-                <input type="text" name="username"
-                    class="form-control input-lg" placeholder="dataset type"
-                    required forbiddenName="" pattern="[A-Za-z0-9]+" autofocus />
-            </div>
-            <div class="form-group">
-                <span class="label-css">Dataset Name</span>
-                <input type="text" name="username"
-                    class="form-control input-lg" placeholder="Dataset name"
-                    required forbiddenName="" pattern="[A-Za-z0-9]+" autofocus />
-            </div>
-            <div class="form-group">
-                <span class="label-css">Data Source</span>
-                <input type="text" name="username"
-                    class="form-control input-lg" placeholder="Dataset name"
-                    required forbiddenName="" pattern="[A-Za-z0-9]+" autofocus />
-            </div>
-            <button type="submit" class="btn  btn-primary  button-color  login-button" > IMPORT </button>
-        </form>
+<div class="row">
+    <div class="col-4 data-container">
+        <div class="">
+            <form novalidate>
+                <div class="form-group">
+                    <span class="label-css">Data Source</span>
+                    <select class="form-control" name="Department">
+                        <option value="upload">Upload Manually</option>
+                        <option value="erp connect">via ERP connect</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span class="label-css">Dataset Type</span>
+                    <input type="text" name="username"
+                        class="form-control input-lg" placeholder="dataset type"
+                        required forbiddenName="" pattern="[A-Za-z0-9]+" autofocus />
+                </div>
+                <div class="form-group">
+                    <span class="label-css">Dataset Name</span>
+                    <input type="text" name="username"
+                        class="form-control input-lg" placeholder="dataset name"
+                        required forbiddenName="" pattern="[A-Za-z0-9]+" autofocus />
+                </div>
+                <button type="submit" class="btn  btn-primary  button-color  import-button" > IMPORT </button>
+            </form>
+        </div>
     </div>
+    <div class="col-6"></div>
 </div>
+
+
