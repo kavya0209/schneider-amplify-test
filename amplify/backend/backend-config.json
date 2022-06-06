@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "schneideramplifytestf9916353": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
