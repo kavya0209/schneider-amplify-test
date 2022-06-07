@@ -24,6 +24,19 @@
           "userPoolName": "SE-Users",
           "webClientId": "nqoa69tmnhjgrk7epqchali6m",
           "nativeClientId": "nqoa69tmnhjgrk7epqchali6m"
+        },
+        "schneideramplifytesta6082284": {
+          "userPoolId": "us-east-2_kLOF5LiBE",
+          "userPoolName": "SE-Users",
+          "webClientId": "nqoa69tmnhjgrk7epqchali6m",
+          "nativeClientId": "nqoa69tmnhjgrk7epqchali6m",
+          "identityPoolId": "us-east-2:21b8b952-a6a6-4e9d-9df0-5509d63a836d",
+          "identityPoolName": "SE-POC-Users",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::111098328594:role/Cognito_SEPOCUsersAuth_Role",
+          "authRoleName": "Cognito_SEPOCUsersAuth_Role",
+          "unauthRoleArn": "arn:aws:iam::111098328594:role/Cognito_SEPOCUsersUnauth_Role",
+          "unauthRoleName": "Cognito_SEPOCUsersUnauth_Role"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
-  "authSelections": "userPoolOnly",
-  "resourceName": "schneideramplifytestf9916353",
+  "authSelections": "identityPoolAndUserPool",
+  "resourceName": "schneideramplifytesta6082284",
   "serviceType": "imported",
   "region": "us-east-2",
   "usernameAttributes": [

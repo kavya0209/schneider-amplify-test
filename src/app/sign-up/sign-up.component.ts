@@ -12,6 +12,14 @@ import { ViewChild} from '@angular/core';
 export class SignUpComponent implements OnInit {
 
   @ViewChild('f', {static: false}) f: NgForm;
+  password = '';
+  email = '';
+  firstName = '';
+  lastName = '';
+  departmentName = '';
+  clientName = '';
+  
+  
   constructor(
     private router: Router,
   ) { }

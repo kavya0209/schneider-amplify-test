@@ -7,9 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDatasetComponent implements OnInit {
 
+  Invoice_Document = '';
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  importData(){
+    console.log(this.Invoice_Document)
+  }
+
+  fileChangeEvent(fileInput: any) {
+
+    console.log(fileInput.target.files[0].name);
+    // this.fileValidResultInvoice = this.globals.validateFile(fileInput.target.files[0].name);
+    // this.filesToUpload1 = <Array<File>> fileInput.target.files;
+    
+  //   await Storage.put(key, userImage, {
+  //     contentType: userImage.type,
+  // });
+
+
+
+
+
+
+
+
   }
 
 }
