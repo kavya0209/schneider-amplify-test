@@ -14,5 +14,12 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "storage": {
+    "SeBucket": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
