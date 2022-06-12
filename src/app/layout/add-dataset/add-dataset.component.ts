@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ViewChild} from '@angular/core';
 import { Storage } from "@aws-amplify/storage";
 import { Auth } from 'aws-amplify';
 // import { AmplifyS3Image } from "@aws-amplify/angular";
@@ -10,81 +10,64 @@ import { Auth } from 'aws-amplify';
 })
 export class AddDatasetComponent implements OnInit {
 
-  Invoice_Document = '';
+  dataUploadFile = '';
+  dataUploadFileType = '';
+  dataSource : number;
+  dataSetType1 = '';
+  dataSetType2 = '';
+  dataSetName = '';
+  showDataSetType1 : boolean = true ;
+  showDataSetType2 : boolean = false ;
+  @ViewChild('f') form: any;
+
   constructor() { }
 
   ngOnInit(): void {
-    // const currentUser = Auth.currentAuthenticatedUser();
-    // console.log(currentUser);
-    // var cognitoUser = userPool.getCurrentUser();
-
-    // if (cognitoUser != null) {
-    //   cognitoUser.getSession(function(err, result) {
-    //     if (result) {
-    //       console.log('You are now logged in.');
-    
-    //       // Add the User's Id Token to the Cognito credentials login map.
-    //       AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    //         IdentityPoolId: 'YOUR_IDENTITY_POOL_ID',
-    //         Logins: {
-    //           'cognito-idp.<region>.amazonaws.com/<YOUR_USER_POOL_ID>': result.getIdToken().getJwtToken()
-    //         }
-    //       });
-    //     }
-    //   });
-    // }
-
-
-
-    
-
-
+  
   }
 
-  importData(){
-    console.log(this.Invoice_Document)
+  onDataSourceChange(){
+   
+    if(this.dataSource == 1){
+      this.showDataSetType1 = true;
+      this.showDataSetType2 = false;
+    }
+    else{
+      this.showDataSetType1 = false;
+      this.showDataSetType2 = true;
+    }
+
   }
 
   fileChangeEvent(fileInput: any) {
-
-    console.log(fileInput.target.files[0]);
-    // this.fileValidResultInvoice = this.globals.validateFile(fileInput.target.files[0].name);
-    // this.filesToUpload1 = <Array<File>> fileInput.target.files;
-
-    
-    
-    Storage.put(fileInput.target.files[0].name, fileInput.target.files[0].name, {
-      contentType: fileInput.target.files[0].type,
-      customPrefix: {public:''}
-  }).then(data => {
-      
-     console.log(data)
-    
-  
-  })
-  .catch((error: any) => {
-    
-    console.log(error);
-   
-    
-    
-    // switch (error.code) {
-    // case 'UsernameExistsException':
-    //   console.log("-----");
-    //   alert(error.code);
-    //   this.router.navigate(['login']);
-    // break;
-    // }
-    
-  })
-
-
-
-
-
-
-
-
+    this.dataUploadFile =  fileInput.target.files[0].name;
+    this.dataUploadFileType = fileInput.target.files[0].type;
   }
+
+
+  save(model : any){
+    // console.log(model);
+    // console.log(this.dataSetType1);
+
+    // console.log(this.dataUploadFile);
+    // console.log(this.dataUploadFileType);
+
+    //   Storage.put('SE-Datasets' +'/' + model.dataSetName + '/' + this.dataUploadFile, {
+    //   level: 'public',
+    //   contentType: this.dataUploadFileType
+    // }).then(data => {
+    //     alert("Data Uploaded Successfully");
+    //   }).catch((error: any) => {
+    
+    //       console.log(error);
+          
+          
+    //     })
+  }
+
+
+ 
+
+
 
 }

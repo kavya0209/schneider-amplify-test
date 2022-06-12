@@ -29,34 +29,29 @@ export class SignUpComponent implements OnInit {
 
   onSignedIn(model){
 
-    Auth.signUp({
-      "username": model.email,
-      "password": model.password ,
-      "attributes": {
-      "email": model.email,
-      "custom:FirstName" : model.firstName  ,
-      "custom:LastName" : model.lastName ,
-      "custom:DepartmentName" : model.departmentName,
-      "custom:ClientName" : model.clientName 
-      }
-    })
-    .then(data => {
-      console.log(data)
-      alert("Sign Up was successfull");
-      this.router.navigate(['login']);    
-      // Emit the successful response from Cognito
-      // This will be picked up by the view in order to show the
-      // confirm form.
-      // this.cognitoUser.emit(data);
-    })
-    .catch((error: any) => {
+    // Auth.signUp({
+    //   "username": model.email,
+    //   "password": model.password ,
+    //   "attributes": {
+    //   "email": model.email,
+    //   "custom:FirstName" : model.firstName  ,
+    //   "custom:LastName" : model.lastName ,
+    //   "custom:DepartmentName" : model.departmentName,
+    //   "custom:ClientName" : model.clientName 
+    //   }
+    // })
+    // .then(data => {
+    //   console.log(data)
+    //   alert("Sign Up was successfull");
+    //   this.router.navigate(['login']);    
+  
+    // })
+    // .catch((error: any) => {
       
-      console.log(error);
-      // switch (error.code) {
-      //   case 'UsernameExistsException':
-      //   break;
-      // }
-    })
+    //   console.log(error);
+   
+    // })
+    this.router.navigate(['login']);   
   }
 
   gotoLoginPage(){

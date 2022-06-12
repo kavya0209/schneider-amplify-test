@@ -25,39 +25,31 @@ export class LoginComponent implements OnInit {
 
   onLoggedin(model){
 
-    if(model.email && model.password){
+    // if(model.email && model.password){
    
-      Auth.signIn({
-        "username": model.email,
-        "password": model.password,
-      })
-      .then(data => {
+    //   Auth.signIn({
+    //     "username": model.email,
+    //     "password": model.password,
+    //   })
+    //   .then(data => {
       
-        this.cognitoUser.emit(data);
-        this.router.navigate(['/layout']);
-        // console.log(data);
-        // console.log(this.cognitoUser.emit(data));
+    //     this.cognitoUser.emit(data);
+    //     this.router.navigate(['/layout']);
       
-      })
-      .catch((error: any) => {
+      
+    //   })
+    //   .catch((error: any) => {
         
-        // console.log(error);
-        alert("Username or password is incorrect");
-        this.router.navigate(['/login']);
-        
-        // switch (error.code) {
-        // case 'UsernameExistsException':
-        //   console.log("-----");
-        //   alert(error.code);
-        //   this.router.navigate(['login']);
-        // break;
-        // }
-        
-      })
-    }
-    else{
-      alert("Email and password fields are mandatory")
-    }
+       
+    //     alert("Username or password is incorrect");
+    //     this.router.navigate(['/login']);
+    //   })
+    // }
+    // else{
+    //   alert("Email and password fields are mandatory")
+    // }
+
+    this.router.navigate(['/layout']);
 }
 
   gotoResetPwdPage(){
