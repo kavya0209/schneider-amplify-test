@@ -29,29 +29,29 @@ export class SignUpComponent implements OnInit {
 
   onSignedIn(model){
 
-    // Auth.signUp({
-    //   "username": model.email,
-    //   "password": model.password ,
-    //   "attributes": {
-    //   "email": model.email,
-    //   "custom:FirstName" : model.firstName  ,
-    //   "custom:LastName" : model.lastName ,
-    //   "custom:DepartmentName" : model.departmentName,
-    //   "custom:ClientName" : model.clientName 
-    //   }
-    // })
-    // .then(data => {
-    //   console.log(data)
-    //   alert("Sign Up was successfull");
-    //   this.router.navigate(['login']);    
+    Auth.signUp({
+      "username": model.email,
+      "password": model.password ,
+      "attributes": {
+      "email": model.email,
+      "custom:FirstName" : model.firstName  ,
+      "custom:LastName" : model.lastName ,
+      "custom:DepartmentName" : model.departmentName,
+      "custom:ClientName" : model.clientName 
+      }
+    })
+    .then(data => {
+      console.log(data)
+      alert("Sign Up was successfull");
+      this.router.navigate(['login']);    
   
-    // })
-    // .catch((error: any) => {
+    })
+    .catch((error: any) => {
       
-    //   console.log(error);
+      console.log(error);
    
-    // })
-    this.router.navigate(['login']);   
+    })
+    // this.router.navigate(['login']);   
   }
 
   gotoLoginPage(){

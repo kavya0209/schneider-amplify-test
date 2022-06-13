@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/prediction/{values}": {
+      "name": "/prediction/{values}",
+      "lambdaFunction": "SeLambaFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
